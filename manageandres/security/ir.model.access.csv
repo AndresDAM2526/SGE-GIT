@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_manageandres_task,manageandres.task,model_manageandres_task,base.group_user,1,1,1,1
+access_manageandres_sprint,manageandres.sprint,model_manageandres_sprint,base.group_user,1,1,1,1
+access_manageandres_project,manageandres.project,model_manageandres_project,base.group_user,1,1,1,1
+access_manageandres_history,manageandres.history,model_manageandres_history,base.group_user,1,1,1,1
+access_manageandres_technology,manageandres.technology,model_manageandres_technology,base.group_user,1,1,1,1

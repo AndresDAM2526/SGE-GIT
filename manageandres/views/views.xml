@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="manageandres.list">
+      <field name="name">manageandres list</field>
+      <field name="model">manageandres.manageandres</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="manageandres.action_window">
+      <field name="name">manageandres window</field>
+      <field name="res_model">manageandres.manageandres</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="manageandres.action_server">
+      <field name="name">manageandres server</field>
+      <field name="model_id" ref="model_manageandres_manageandres"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="manageandres" id="manageandres.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="manageandres.menu_1" parent="manageandres.menu_root"/>
+    <menuitem name="Menu 2" id="manageandres.menu_2" parent="manageandres.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="manageandres.menu_1_list" parent="manageandres.menu_1"
+              action="manageandres.action_window"/>
+    <menuitem name="Server to list" id="manageandres" parent="manageandres.menu_2"
+              action="manageandres.action_server"/>
+-->
+  </data>
+</odoo>
