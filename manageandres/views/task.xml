@@ -10,14 +10,16 @@
                     <field name="description"/>
                     <field name="start_date"/>
                     <field name="end_date"/>
-                    <field name="is_paused"/>
+                    <field name="history_id"/>
+                    <field name="sprint_id"/>
+                    <field name="technologies_id"/>
                 </tree>
             </field>
         </record>
 
         <record model="ir.ui.view" id="vista_manageandres_task_form">
                 <field name="name">vista_manageandres_task_form</field>
-                <field name="model">filmotecaandres.tecnica</field>
+                <field name="model">manageandres.task</field>
                 <field name="arch" type="xml">
                     <form string="formulario_task">
                         <sheet>
@@ -27,6 +29,9 @@
                                 <field name="start_date"/>
                                 <field name="end_date"/>
                                 <field name="is_paused"/>
+                                <field name="history_id"/>
+                                <field name="sprint_id"/>
+                                <field name="technologies_id"/>
                             </group>
                         </sheet>
                     </form>
@@ -51,9 +56,9 @@
 
 
         <!--Menu raíz-->
-        <menuitem name="Management" id="menu_manageandres_raiz"/>
-
-        <!--Segundo nivel-->
-        <menuitem name="Task" parent="menu_manageandres_raiz"/>
+        <menuitem name="ManagementAndres" id="menu_manageandres_raiz"/>
+        
+        <menuitem name="Task" id="menu_manageandres_task" parent="menu_manageandres"
+              action="accion_manageandres_task_form"/>
     </data>
 </odoo>

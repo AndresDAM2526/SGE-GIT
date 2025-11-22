@@ -1,6 +1,5 @@
 <odoo>
     <data>
-    
         <record model="ir.ui.view" id="vista_manageandres_history_tree">
             <field name="name">vista_manageandres_history_tree</field>
             <field name="model">manageandres.history</field>
@@ -8,6 +7,8 @@
                 <tree>
                     <field name="name"/>
                     <field name="description"/>
+                    <field name="project_id"/>
+                    <field name="tasks_id"/>
                 </tree>
             </field>
         </record>
@@ -21,6 +22,8 @@
                             <group name="group_top">
                                 <field name="name"/>
                                 <field name="description"/>
+                                <field name="project_id"/>
+                                <field name="tasks_id"/>
                             </group>
                         </sheet>
                     </form>
@@ -41,13 +44,13 @@
             </field>
         </record>
 
-
-
-
         <!--Menu raíz-->
-        <menuitem name="Management" id="menu_manageandres_raiz"/>
+        <menuitem name="ManagementAndres" id="menu_manageandres_raiz"/>
 
-        <!--Segundo nivel-->
-        <menuitem name="History" parent="menu_manageandres_raiz"/>
+         <!--Segundo nivel-->
+        <menuitem name="Management" id="menu_manageandres" parent="menu_manageandres_raiz"/>
+
+        <menuitem name="History" id="menu_manageandres_history" parent="menu_manageandres"
+              action="accion_manageandres_history_form"/>
     </data>
 </odoo>

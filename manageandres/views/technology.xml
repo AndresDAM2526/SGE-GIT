@@ -8,8 +8,8 @@
                 <tree>
                     <field name="name"/>
                     <field name="description"/>
-                    <field name="start_date"/>
-                    <field name="end_date"/>
+                    <field name="photo"/>
+                    <field name="tasks_id"/>
                 </tree>
             </field>
         </record>
@@ -23,7 +23,8 @@
                             <group name="group_top">
                                 <field name="name"/>
                                 <field name="description"/>
-
+                                <field name="photo"/>
+                                <field name="tasks_id"/>
                             </group>
                         </sheet>
                     </form>
@@ -48,9 +49,9 @@
 
 
         <!--Menu raíz-->
-        <menuitem name="Management" id="menu_manageandres_raiz"/>
-
-        <!--Segundo nivel-->
-        <menuitem name="Technology" parent="menu_manageandres_raiz"/>
+        <menuitem name="ManagementAndres" id="menu_manageandres_raiz"/>
+        
+        <menuitem name="Technology" id="menu_manageandres_technology" parent="menu_manageandres"
+              action="accion_manageandres_technology_form"/>
     </data>
 </odoo>
