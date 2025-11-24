@@ -47,9 +47,6 @@
         <!--Menu raíz-->
         <menuitem name="ManagementAndres" id="menu_manageandres_raiz"/>
 
-         <!--Segundo nivel-->
-        <menuitem name="Management" id="menu_manageandres" parent="menu_manageandres_raiz"/>
-
         <menuitem name="History" id="menu_manageandres_history" parent="menu_manageandres"
               action="accion_manageandres_history_form"/>
     </data>
