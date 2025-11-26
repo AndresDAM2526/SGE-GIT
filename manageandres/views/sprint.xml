@@ -25,6 +25,7 @@
                             <group name="group_top">
                                 <field name="name"/>
                                 <field name="description"/>
+                                <field name="duration"/>
                                 <field name="start_date"/>
                                 <field name="end_date"/>
                                 <field name="tasks_id"/>

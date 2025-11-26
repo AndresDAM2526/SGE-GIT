@@ -6,12 +6,13 @@
             <field name="model">manageandres.task</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="code"/>
                     <field name="name"/>
                     <field name="description"/>
                     <field name="start_date"/>
                     <field name="end_date"/>
                     <field name="history_id"/>
-                    <field name="sprint_id"/>
+                    <field name="sprint"/>
                     <field name="technologies_id"/>
                 </tree>
             </field>
@@ -24,13 +25,14 @@
                     <form string="formulario_task">
                         <sheet>
                             <group name="group_top">
+                                <field name="project"/>
                                 <field name="name"/>
                                 <field name="description"/>
                                 <field name="start_date"/>
                                 <field name="end_date"/>
                                 <field name="is_paused"/>
                                 <field name="history_id"/>
-                                <field name="sprint_id"/>
+                                <field name="sprint"/>
                                 <field name="technologies_id"/>
                             </group>
                         </sheet>
