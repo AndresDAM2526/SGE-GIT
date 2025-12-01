@@ -14,7 +14,10 @@ class task(models.Model):
     start_date=fields.Datetime()
     end_date=fields.Datetime()
     is_paused=fields.Boolean()
+    def _get_definition_date(self):
+        return datetime.datetime.now()
 
+    definition_date=fields.Datetime(default=lambda p:datetime.datetime.now())
     history_id=fields.Many2one("manageandres.history",string="History", required=True,ondelete="cascade")
     sprint=fields.Many2one("manageandres.sprint",compute="_get_sprint",store=True)
     technologies_id=fields.Many2many(comodel_name="manageandres.technology",relation="sprint_task",column1="technology_id",column2="task_id",string="Technologies")
@@ -44,7 +47,7 @@ class sprint(models.Model):
     name=fields.Char()
     description=fields.Char()
     start_date=fields.Datetime()
-    duration=fields.Integer()
+    duration=fields.Integer(default=15)
     end_date=fields.Datetime(compute="_get_end_date",store=True)
     
 
@@ -103,3 +106,14 @@ class technology(models.Model):
     photo=fields.Image()
 
     tasks_id=fields.Many2many(comodel_name="manageandres.task",relation="sprint_task",column1="task_id",column2="technology_id",string="Tasks")
+
+class developer(models.Model):
+    _name='res.partner'
+    _inherit='res.partner'
+
+    is_dev=fields.Boolean(default=True)
+
+    technologies=fields.Many2many('manageandres.technology',
+                                  relation='developer_technologies',
+                                  column1='developer_id',
+                                  column2='technologies_id')

@@ -1,0 +1,46 @@
+<odoo>
+<!--Puesto de trabajo function-->
+    <data>
+        <record model="ir.ui.view" id="manageandres.devs_partner_form">
+            <field name="name">manageandres devs form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"></field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
+                    <page name="devs" string="Devs">
+                        <group>
+                            <group>
+                                <field name="technologies"></field>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="manageandres.action_developer_window">
+            <field name="name">manageandres window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="manageandres.action_view_developer_tree">
+            <field name="sequence" eval="1"></field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="base.view_partner_tree"></field>
+            <field name="act_window_id" ref="manageandres.action_developer_window"></field>
+        </record>
+
+
+        <record model="ir.actions.act_window.view" id="manageandres.action_view_developer_form">
+            <field name="sequence" eval="2"></field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="manageandres.devs_partner_form"></field>
+            <field name="act_window_id" ref="manageandres.action_developer_window"></field>
+        </record>
+
+        <menuitem name="Devs" id="menu_manageandres_devs" parent="menu_manageandres"
+              action="manageandres.action_developer_window"/>
+  </data>
+</odoo>
