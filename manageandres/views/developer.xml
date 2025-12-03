@@ -11,6 +11,7 @@
                     <page name="devs" string="Devs">
                         <group>
                             <group>
+                                <field name="is_dev"></field>
                                 <field name="technologies"></field>
                             </group>
                         </group>
@@ -23,6 +24,7 @@
             <field name="name">manageandres window</field>
             <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
+            <field name="domain">[('function','=','Desarrollador')]</field>
         </record>
 
         <record model="ir.actions.act_window.view" id="manageandres.action_view_developer_tree">

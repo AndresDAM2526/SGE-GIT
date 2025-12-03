@@ -111,9 +111,10 @@ class developer(models.Model):
     _name='res.partner'
     _inherit='res.partner'
 
-    is_dev=fields.Boolean(default=True)
+    is_dev=fields.Boolean(default=lambda self: True)
 
     technologies=fields.Many2many('manageandres.technology',
                                   relation='developer_technologies',
                                   column1='developer_id',
                                   column2='technologies_id')
+    
