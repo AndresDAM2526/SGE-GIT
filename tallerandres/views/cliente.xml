@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="vista_tallerandres_cliente_tree">
+            <field name="name">vista_tallerandres_cliente_tree</field>
+            <field name="model">tallerandres.cliente</field>
+            <field name="arch" type="xml">
+                <tree>
+                <field name="dni"/>
+                <field name="nombre"/>
+                <field name="apellidos"/>
+                <field name="direccion"/>
+                <field name="id_vehiculo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="vista_tallerandres_cliente_form">
+            <field name="name">vista_tallerandres_cliente_form</field>
+            <field name="model">tallerandres.cliente</field>
+            <field name="arch" type="xml">
+                <form string="formulario_cliente">
+                    <sheet>
+                        <group name="group_top">
+                <field name="dni"/>
+                <field name="nombre"/>
+                <field name="apellidos"/>
+                <field name="direccion"/>
+                <field name="id_vehiculo"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="accion_tallerandres_cliente_form">
+            <field name="name">Cliente</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tallerandres.cliente</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Cliente
+                </p>
+                <p>Click <strong>Crear</strong> para añadir nuevo elementos
+                </p>
+            </field>
+        </record>
+
+        <!--Menú raíz-->
+        <menuitem name="TallerAndres" id="menu_tallerandres_raiz"/>
+        <!--Segundo nivel-->
+        <menuitem name="Taller" id="menu_tallerandres" parent="menu_tallerandres_raiz"/>
+
+        <menuitem name="Cliente" id="menu_tallerandres_cliente" parent="menu_tallerandres"
+              action="accion_tallerandres_cliente_form"/>
+    </data>
+</odoo>

@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="vista_tallerandres_reparacion_tree">
+            <field name="name">vista_tallerandres_reparacion_tree</field>
+            <field name="model">tallerandres.reparacion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="fecha_inicio"/>
+                    <field name="fecha_fin"/>
+                    <field name="descripcion"/>
+                    <field name="total"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="vista_tallerandres_reparacion_form">
+            <field name="name">vista_tallerandres_reparacion_form</field>
+            <field name="model">tallerandres.reparacion</field>
+            <field name="arch" type="xml">
+                <form string="formulario_reparacion">
+                    <sheet>
+                        <group name="group_top">
+                            <field name="fecha_inicio"/>
+                            <field name="fecha_fin"/>
+                            <field name="descripcion"/>
+                            <field name="total"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="accion_tallerandres_reparacion_form">
+            <field name="name">Reparacion</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tallerandres.reparacion</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Reparacion
+                </p>
+                <p>Click <strong>Crear</strong> para añadir nuevo elementos
+                </p>
+            </field>
+        </record>
+        
+        <menuitem name="Reparación" id="menu_tallerandres_reparacion" parent="menu_tallerandres"
+              action="accion_tallerandres_reparacion_form"/>
+
+    </data>
+</odoo>

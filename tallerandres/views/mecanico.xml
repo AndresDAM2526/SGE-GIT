@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="vista_tallerandres_mecanico_tree">
+            <field name="name">vista_tallerandres_mecanico_tree</field>
+            <field name="model">tallerandres.mecanico</field>
+            <field name="arch" type="xml">
+                <tree>
+                <field name="nombre"/>
+                <field name="especialidad"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="vista_tallerandres_mecanico_form">
+            <field name="name">vista_tallerandres_mecanico_form</field>
+            <field name="model">tallerandres.mecanico</field>
+            <field name="arch" type="xml">
+                <form string="formulario_mecanico">
+                    <sheet>
+                        <group name="group_top">
+                            <field name="nombre"/>
+                            <field name="especialidad"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="accion_tallerandres_mecanico_form">
+            <field name="name">Mecanico</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tallerandres.mecanico</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Mecanico
+                </p>
+                <p>Click <strong>Crear</strong> para añadir nuevo elementos
+                </p>
+            </field>
+        </record>
+        <menuitem name="Mecanico" id="menu_tallerandres_mecanico" parent="menu_tallerandres"
+              action="accion_tallerandres_mecanico_form"/>
+
+    </data>
+</odoo>
