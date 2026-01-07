@@ -5,7 +5,7 @@
             <field name="model">tallerandres.marca</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="marca"/>
+                    <field name="name"/>
 
                 </tree>
             </field>
@@ -18,7 +18,7 @@
                 <form string="formulario_marca">
                     <sheet>
                         <group name="group_top">
-                            <field name="marca"/>
+                            <field name="name"/>
                         </group>
                     </sheet>
                 </form>

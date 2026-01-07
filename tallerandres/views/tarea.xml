@@ -5,9 +5,12 @@
             <field name="model">tallerandres.tarea</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="nombre"/>
+                    <field name="name"/>
                     <field name="tiempo"/>
                     <field name="precio_hora"/>
+                    <field name="total"/>
+                    <field name="id_reparacion"/>
+                    <field name="id_mecanico"/>
                 </tree>
             </field>
         </record>
@@ -19,9 +22,12 @@
                 <form string="formulario_tarea">
                     <sheet>
                         <group name="group_top">
-                            <field name="nombre"/>
+                            <field name="name"/>
                             <field name="tiempo"/>
                             <field name="precio_hora"/>
+                            <field name="total"/>
+                            <field name="id_reparacion"/>
+                            <field name="id_mecanico"/>
                         </group>
                     </sheet>
                 </form>

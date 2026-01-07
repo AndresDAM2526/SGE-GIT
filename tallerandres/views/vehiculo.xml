@@ -5,7 +5,8 @@
             <field name="model">tallerandres.vehiculo</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="matricula"/>
+                    <field name="name"/>
+                    <field name="id_marca"/>
                     <field name="modelo"/>
                     <field name="id_cliente"/>
                 </tree>
@@ -19,7 +20,8 @@
                 <form string="formulario_vehiculo">
                     <sheet>
                         <group name="group_top">
-                    <field name="matricula"/>
+                    <field name="name"/>
+                    <field name="id_marca"/>
                     <field name="modelo"/>
                     <field name="id_cliente"/>
                         </group>

@@ -6,8 +6,7 @@
             <field name="arch" type="xml">
                 <tree>
                 <field name="dni"/>
-                <field name="nombre"/>
-                <field name="apellidos"/>
+                <field name="name"/>
                 <field name="direccion"/>
                 <field name="id_vehiculo"/>
                 </tree>
@@ -22,8 +21,7 @@
                     <sheet>
                         <group name="group_top">
                 <field name="dni"/>
-                <field name="nombre"/>
-                <field name="apellidos"/>
+                <field name="name"/>
                 <field name="direccion"/>
                 <field name="id_vehiculo"/>
                         </group>

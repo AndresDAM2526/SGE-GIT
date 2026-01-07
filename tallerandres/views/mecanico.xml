@@ -5,8 +5,9 @@
             <field name="model">tallerandres.mecanico</field>
             <field name="arch" type="xml">
                 <tree>
-                <field name="nombre"/>
+                <field name="name"/>
                 <field name="especialidad"/>
+                <field name="id_tarea"/>
                 </tree>
             </field>
         </record>
@@ -18,8 +19,9 @@
                 <form string="formulario_mecanico">
                     <sheet>
                         <group name="group_top">
-                            <field name="nombre"/>
+                            <field name="name"/>
                             <field name="especialidad"/>
+                            <field name="id_tarea"/>
                         </group>
                     </sheet>
                 </form>

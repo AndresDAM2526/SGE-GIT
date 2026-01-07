@@ -9,6 +9,9 @@
                     <field name="fecha_fin"/>
                     <field name="descripcion"/>
                     <field name="total"/>
+                    <field name="id_vehiculo"/>
+                    <field name="id_tarea"/>
+
                 </tree>
             </field>
         </record>
@@ -24,6 +27,8 @@
                             <field name="fecha_fin"/>
                             <field name="descripcion"/>
                             <field name="total"/>
+                            <field name="id_vehiculo"/>
+                            <field name="id_tarea"/>
                         </group>
                     </sheet>
                 </form>
