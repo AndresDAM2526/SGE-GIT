@@ -1,5 +1,6 @@
 
 from odoo import models,fields,api
+from odoo.exceptions import ValidationError
 
 class tarea(models.Model):
     _name='tallerandres.tarea'
@@ -16,3 +17,15 @@ class tarea(models.Model):
     def _get_total(self):
         for tarea in self:
             tarea.total=tarea.tiempo*tarea.precio_hora
+
+    @api.constrains('precio_hora')
+    def _check_precio(self):
+        for tarea in self:
+            if tarea.precio_hora<0:
+                raise ValidationError("El precio por hora no puede ser negativo")
+            
+    @api.constrains('tiempo')
+    def _check_tiempo(self):
+        for tarea in self:
+            if tarea.tiempo>0:
+                raise ValidationError("El tiempo no puede ser negativo")
