@@ -1,22 +1,19 @@
 # -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http
+from odoo.http import Response
+import json
 
 
-# class Tallerandres(http.Controller):
-#     @http.route('/tallerandres/tallerandres', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+class vehiculo_controller(http.Controller):
+    @http.route('/api/vehiculos', auth='public',method=['GET'], csrf=False)
+    def get_vehiculos(self,**kw):
+        try:
+            vehiculos=http.request.env['tallerandres.vehiculo'].sudo().search_read([],['name','id_marca','modelo'])
+            res=json.dumps(vehiculos,ensure_ascii=False).encode('utf-8')
+            return Response(res,content_type='application/json;charset=utf-8',status=200)
+        except Exception as e:
+            return Response(json.dumps({'error':str(e)}),content_type='application/json;charset=utf-8',status=505)
+     
 
-#     @http.route('/tallerandres/tallerandres/objects', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('tallerandres.listing', {
-#             'root': '/tallerandres/tallerandres',
-#             'objects': http.request.env['tallerandres.tallerandres'].search([]),
-#         })
-
-#     @http.route('/tallerandres/tallerandres/objects/<model("tallerandres.tallerandres"):obj>', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('tallerandres.object', {
-#             'object': obj
-#         })
+    
 

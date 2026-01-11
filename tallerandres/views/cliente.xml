@@ -1,48 +1,44 @@
 <odoo>
     <data>
-        <record model="ir.ui.view" id="vista_tallerandres_cliente_tree">
-            <field name="name">vista_tallerandres_cliente_tree</field>
-            <field name="model">tallerandres.cliente</field>
+        <record model="ir.ui.view" id="tallerandres.cliente_partner_form">
+            <field name="name">tallerandres cliente form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"></field>
+            <field name="mode">primary</field>
             <field name="arch" type="xml">
-                <tree>
-                <field name="dni"/>
-                <field name="name"/>
-                <field name="direccion"/>
-                <field name="id_vehiculo"/>
-                </tree>
-            </field>
-        </record>
-
-        <record model="ir.ui.view" id="vista_tallerandres_cliente_form">
-            <field name="name">vista_tallerandres_cliente_form</field>
-            <field name="model">tallerandres.cliente</field>
-            <field name="arch" type="xml">
-                <form string="formulario_cliente">
-                    <sheet>
-                        <group name="group_top">
-                <field name="dni"/>
-                <field name="name"/>
-                <field name="direccion"/>
-                <field name="id_vehiculo"/>
+                <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
+                    <page name="vehiculo" string="Vehiculos">
+                        <group>
+                            <group>
+                                <field name="id_vehiculo"/>
+                            </group>
                         </group>
-                    </sheet>
-                </form>
+                    </page>
+                </xpath>
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="accion_tallerandres_cliente_form">
-            <field name="name">Cliente</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">tallerandres.cliente</field>
+        <record model="ir.actions.act_window" id="tallerandres.action_cliente_window">
+            <field name="name">Clientes</field>
+            <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
-                    Cliente
-                </p>
-                <p>Click <strong>Crear</strong> para añadir nuevo elementos
-                </p>
-            </field>
         </record>
+
+        <record model="ir.actions.act_window.view" id="tallerandres.action_view_cliente_tree">
+            <field name="sequence" eval="1"></field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="base.view_partner_tree"></field>
+            <field name="act_window_id" ref="tallerandres.action_cliente_window"></field>
+        </record>
+
+
+        <record model="ir.actions.act_window.view" id="tallerandres.action_view_cliente_form">
+            <field name="sequence" eval="2"></field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="tallerandres.cliente_partner_form"></field>
+            <field name="act_window_id" ref="tallerandres.action_cliente_window"></field>
+        </record>
+
 
         <!--Menú raíz-->
         <menuitem name="TallerAndres" id="menu_tallerandres_raiz"/>
@@ -50,6 +46,6 @@
         <menuitem name="Taller" id="menu_tallerandres" parent="menu_tallerandres_raiz"/>
 
         <menuitem name="Cliente" id="menu_tallerandres_cliente" parent="menu_tallerandres"
-              action="accion_tallerandres_cliente_form"/>
+              action="tallerandres.action_cliente_window"/>
     </data>
 </odoo>

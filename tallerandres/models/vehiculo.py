@@ -8,5 +8,6 @@ class vehiculo(models.Model):
     name=fields.Char(string="Matricula",required=True,help="Matricula")
     id_marca=fields.Many2one("tallerandres.marca",string="Marca",required=True,ondelete="cascade")
     modelo=fields.Char(string="Modelo",help="Modelo")
-    id_cliente=fields.Many2one("tallerandres.cliente",string="Cliente",required=True,ondelete="cascade")
+    id_cliente=fields.Many2one("res.partner",string="Cliente",required=True,ondelete="cascade")
+    foto=fields.Image(string="Foto")
     
