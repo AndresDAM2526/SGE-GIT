@@ -21,7 +21,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="manageandres.action_developer_window">
-            <field name="name">manageandres window</field>
+            <field name="name">Developer</field>
             <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[('function','=','Desarrollador')]</field>
