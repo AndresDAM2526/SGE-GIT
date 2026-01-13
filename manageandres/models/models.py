@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
 import datetime
-
+from datetime import date
+from odoo.exceptions import ValidationError
 
 class task(models.Model):
     _name='manageandres.task'
@@ -37,6 +38,11 @@ class task(models.Model):
                     found=True
             if not found:
                 task.sprint=False
+
+    @api.constrains('start_date','end_date')
+    def _check_dates(self):
+        if self.start_date < date.today() or self.end_date < date.today():
+            raise ValidationError("Las fechas no pueden ser anteriores al día de hoy")
 
     
 
