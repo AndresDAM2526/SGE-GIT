@@ -1,0 +1,73 @@
+<odoo>
+  <data>
+
+  <record model="ir.ui.view" id="vista_iawilliamandres_proyecto_tree">
+            <field name="name">vista_manageandres_task_tree</field>
+            <field name="model">iawilliamandres.proyecto</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="titulo"/>
+                    <field name="descripcion"/>
+                    <field name="prioridad"/>
+                    <field name="urgente"/>
+                    <field name="en_espera"/>
+                    <field name="finalizado"/>
+                    <field name="imagen"/>
+                    <field name="fecha_creacion"/>
+                    <field name="fecha_modificacion"/>
+                    <field name="laboratorios_id"/>
+                    <field name="cientificos_id"/>
+                    <field name="especialidades_id"/>
+                    <field name="recursos_id"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="vista_iawilliamandres_proyecto_form">
+                <field name="name">vista_iawilliamandres_proyecto_form</field>
+                <field name="model">iawilliamandres.proyecto</field>
+                <field name="arch" type="xml">
+                    <form string="formulario_task">
+                        <sheet>
+                            <group name="group_top">
+                                <field name="titulo"/>
+                                <field name="descripcion"/>
+                                <field name="prioridad"/>
+                                <field name="urgente"/>
+                                <field name="en_espera"/>
+                                <field name="finalizado"/>
+                                <field name="imagen"/>
+                                <field name="fecha_creacion"/>
+                                <field name="fecha_modificacion"/>
+                                <field name="laboratorios_id"/>
+                                <field name="cientificos_id"/>
+                                <field name="especialidades_id"/>
+                                <field name="recursos_id"/>
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
+   
+        <record model="ir.actions.act_window" id="accion_iawilliamandres_proyecto_form">
+            <field name="name">proyecto</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">iawilliamandres.proyecto</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Proyecto
+                </p>
+                <p>Click <strong>Crear</strong> para añadir nuevo elementos
+                </p>
+            </field>
+        </record>
+
+       
+        
+        <menuitem name="IA" id="menu_iawilliamandres" parent="menu_iawilliamandres_raiz"/>
+        <menuitem name="Proyecto" id="menu_iawilliamandres_proyecto" parent="menu_iawilliamandres"
+              action="accion_iawilliamandres_proyecto_form"/>
+  </data>
+</odoo>

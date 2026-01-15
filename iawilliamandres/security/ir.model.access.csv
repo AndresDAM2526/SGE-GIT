@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_iawilliamandres_laboratorio,iawilliamandres.laboratorio,model_iawilliamandres_laboratorio,base.group_user,1,1,1,1
+access_iawilliamandres_proyecto,iawilliamandres.proyecto,model_iawilliamandres_proyecto,base.group_user,1,1,1,1
+access_iawilliamandres_recurso,iawilliamandres.recurso,model_iawilliamandres_recurso,base.group_user,1,1,1,1
+access_iawilliamandres_especialidad,iawilliamandres.especialidad,model_iawilliamandres_especialidad,base.group_user,1,1,1,1
+access_iawilliamandres_cientifico,iawilliamandres.cientifico,model_iawilliamandres_cientifico,base.group_user,1,1,1,1

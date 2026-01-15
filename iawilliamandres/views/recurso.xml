@@ -1,0 +1,52 @@
+<odoo>
+  <data>
+
+  <record model="ir.ui.view" id="vista_iawilliamandres_recurso_tree">
+            <field name="name">vista_manageandres_task_tree</field>
+            <field name="model">iawilliamandres.recurso</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre"/>
+                    <field name="cantidad_disponible"/>
+                    <field name="proyectos_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="vista_iawilliamandres_recurso_form">
+                <field name="name">vista_iawilliamandres_recurso_form</field>
+                <field name="model">iawilliamandres.recurso</field>
+                <field name="arch" type="xml">
+                    <form string="formulario_task">
+                        <sheet>
+                            <group name="group_top">
+                                <field name="nombre"/>
+                                <field name="cantidad_disponible"/>
+                                <field name="proyectos_id"/>
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
+   
+        <record model="ir.actions.act_window" id="accion_iawilliamandres_recurso_form">
+            <field name="name">recurso</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">iawilliamandres.recurso</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Recurso
+                </p>
+                <p>Click <strong>Crear</strong> para añadir nuevo elementos
+                </p>
+            </field>
+        </record>
+
+       
+        
+        <menuitem name="IA" id="menu_iawilliamandres" parent="menu_iawilliamandres_raiz"/>
+        <menuitem name="Recurso" id="menu_iawilliamandres_recurso" parent="menu_iawilliamandres"
+              action="accion_iawilliamandres_recurso_form"/>
+  </data>
+</odoo>
