@@ -14,6 +14,16 @@ class vehiculo_controller(http.Controller):
         except Exception as e:
             return Response(json.dumps({'error':str(e)}),content_type='application/json;charset=utf-8',status=505)
      
+class reparacion_controller(http.Controller):
+    @http.route('/api/reparaciones', auth='public',method=['GET'], csrf=False)
+    def get_reparaciones(self,**kw):
+        try:
+            reparaciones=http.request.env['tallerandres.reparacion'].sudo().search_read([],['descripcion','total'])
+            res=json.dumps(reparaciones,ensure_ascii=False).encode('utf-8')
+            return Response(res,content_type='application/json;charset=utf-8',status=200)
+        except Exception as e:
+            return Response(json.dumps({'error':str(e)}),content_type='application/json;charset=utf-8',status=505)
+     
 
     
 
