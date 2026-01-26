@@ -27,5 +27,5 @@ class tarea(models.Model):
     @api.constrains('tiempo')
     def _check_tiempo(self):
         for tarea in self:
-            if tarea.tiempo>0:
+            if tarea.tiempo<0:
                 raise ValidationError("El tiempo no puede ser negativo")
